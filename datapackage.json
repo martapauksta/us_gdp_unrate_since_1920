@@ -1,0 +1,132 @@
+{
+  "name": "extended-us-economic-indicators",
+  "title": "Extended U.S. Economic Indicators: GDP and Unemployment Data (1920–Present)",
+  "description": "This data package contains extended datasets for U.S. Gross Domestic Product (GDP) and Unemployment Rates, combining official modern data with historical annual data compiled from archival sources. The datasets provide a continuous time series starting from 1920.",
+  "version": "1.0.0",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "title": "Creative Commons Attribution 4.0",
+      "path": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "sources": [
+    {
+      "title": "U.S. Bureau of Economic Analysis (BEA) via FRED",
+      "path": "https://fred.stlouisfed.org/"
+    },
+    {
+      "title": "U.S. Bureau of Labor Statistics (BLS) via FRED",
+      "path": "https://fred.stlouisfed.org/"
+    },
+    {
+      "title": "U.S. Census Bureau’s Bicentennial Edition: Historical Statistics of the United States, Colonial Times to 1970",
+      "path": "https://www.census.gov/library/publications/1975/compendia/hist_stats_colonial-1970.html"
+    }
+  ],
+  "resources": [
+    {
+      "name": "gdp_combined_1920_2023_annual",
+      "path": "gdp_combined_1920_2023_annual.csv",
+      "title": "Combined Extended GDP Data (1920–2023 Annual)",
+      "description": "Extended real GDP dataset combining historical annual data (1920–1946) from U.S. Census Bureau with modern annual aggregates (1947–2023) from BEA via FRED.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Year",
+            "type": "integer",
+            "description": "The calendar year (1920–2023)."
+          },
+          {
+            "name": "GDP",
+            "type": "number",
+            "description": "Real GDP in billions of chained dollars."
+          },
+          {
+            "name": "Source",
+            "type": "string",
+            "description": "Data source: 'Census Historical' or 'BEA/FRED'."
+          }
+        ]
+      }
+    },
+    {
+      "name": "gdp_since_1920_1947_annual_us_census_bureau",
+      "path": "gdp_since_1920_1947_annual_us_census_bureau.csv",
+      "title": "Historical GDP Data (1920–1947 Annual from Census Bureau)",
+      "description": "Annual real GDP data for 1920–1947 manually compiled from U.S. Census Bureau’s historical statistics.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Year",
+            "type": "integer",
+            "description": "The calendar year (1920–1947)."
+          },
+          {
+            "name": "GDP",
+            "type": "number",
+            "description": "Real GDP in billions of chained dollars."
+          },
+          {
+            "name": "Source",
+            "type": "string",
+            "description": "Data source: 'Census Historical'."
+          }
+        ]
+      }
+    },
+    {
+      "name": "unrate_1920_1948",
+      "path": "unrate_1920_1948.csv",
+      "title": "Extended Unemployment Rate Data (1920–Present)",
+      "description": "Extended unemployment rate dataset with annual data (1920–1947) from U.S. Census Bureau and monthly data (1948–present) from BLS via FRED.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Date",
+            "type": "string",
+            "description": "Date in YYYY format for annual data or YYYY-MM for monthly data."
+          },
+          {
+            "name": "Unemployment Rate",
+            "type": "number",
+            "description": "Unemployment rate as a percentage."
+          },
+          {
+            "name": "Source",
+            "type": "string",
+            "description": "Data source: 'Census Historical' or 'BLS/FRED'."
+          }
+        ]
+      }
+    },
+    {
+      "name": "unrate_since_1948_mly_bls",
+      "path": "unrate_since_1948_mly_bls.csv",
+      "title": "Monthly Unemployment Rate Data (1948–Present from BLS)",
+      "description": "Monthly unemployment rate data from January 1948 to the present, sourced from BLS via FRED.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Date",
+            "type": "string",
+            "description": "Date in YYYY-MM format."
+          },
+          {
+            "name": "Unemployment Rate",
+            "type": "number",
+            "description": "Unemployment rate as a percentage."
+          }
+        ]
+      }
+    }
+  ]
+}
